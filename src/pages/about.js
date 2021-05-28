@@ -32,7 +32,8 @@ const BlogPage = () => {
       <div className="section timeline">
         <div className="container">
           <VerticalTimeline className="kcr-vertical-timeline">
-            <VerticalTimelineElement
+            <VerticalTimelineElement 
+              intersectionObserverProps={{ triggerOnce: true }}
               className="vertical-timeline-element--work"
               date="June 2020 - August 2020"
               iconStyle={{ background: '#801A86', color: '#fff' }}
@@ -49,6 +50,7 @@ const BlogPage = () => {
               </p>
             </VerticalTimelineElement>
             <VerticalTimelineElement
+              intersectionObserverProps={{ triggerOnce: true }}
               className="vertical-timeline-element--work"
               date="June 2019 - August 2019"
               iconStyle={{ background: '#801A86', color: '#fff' }}
@@ -64,6 +66,7 @@ const BlogPage = () => {
               </p>
             </VerticalTimelineElement>
             <VerticalTimelineElement
+              intersectionObserverProps={{ triggerOnce: true }}
               className="vertical-timeline-element--education"
               date="August 2018 - May 2022"
               iconStyle={{ background: '#9A0913', color: '#fff' }}
@@ -73,6 +76,7 @@ const BlogPage = () => {
               <h4 className="vertical-timeline-element-subtitle">BS in Computer Science</h4>
             </VerticalTimelineElement>
             <VerticalTimelineElement
+              intersectionObserverProps={{ triggerOnce: true }}
               className="vertical-timeline-element--project"
               date="June 2016 - August 2018"
               iconStyle={{ background: '#F3B700', color: '#fff' }}
@@ -91,6 +95,7 @@ const BlogPage = () => {
               </p>
             </VerticalTimelineElement>
             <VerticalTimelineElement
+              intersectionObserverProps={{ triggerOnce: true }}
               className="vertical-timeline-element--education"
               date="August 2014 - June 2018"
               iconStyle={{ background: '#9A0913', color: '#fff' }}
@@ -100,6 +105,7 @@ const BlogPage = () => {
               <h4 className="vertical-timeline-element-subtitle">High School</h4>
             </VerticalTimelineElement>
             <VerticalTimelineElement
+              intersectionObserverProps={{ triggerOnce: true }}
               className="vertical-timeline-element--project"
               date="June 2014 - August 2016"
               iconStyle={{ background: '#F3B700', color: '#fff' }}
@@ -115,6 +121,7 @@ const BlogPage = () => {
               </p>
             </VerticalTimelineElement>
             <VerticalTimelineElement
+              intersectionObserverProps={{ triggerOnce: true }}
               className="vertical-timeline-element--project"
               date="July 2013 - September 2014"
               iconStyle={{ background: '#F3B700', color: '#fff' }}
