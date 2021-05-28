@@ -1,42 +1,110 @@
 module.exports = {
   siteMetadata: {
-    title: "Personal Website",
+    title: 'Keith Condray-Raderstorf',
+    author: 'Keith Condray-Raderstorf',
+    description: 'The personal website and blog of Keith Condray-Raderstorf.',
+    siteUrl: 'https://keithcr.com/',
+    social: {
+      twitter: 'keithc_r',
+      github: 'keith-cr',
+      linkedin: 'keith-cr',
+      email: 'keith@kmddigital.com'
+    },
+    menuLinks: [
+      {
+        name: 'Home',
+        link: '/'
+      },
+      {
+        name: 'About',
+        link: '/about'
+      }
+    ]
   },
   plugins: [
-    "gatsby-plugin-sass",
-    "gatsby-plugin-image",
     {
-      resolve: "gatsby-plugin-google-analytics",
+      resolve: 'gatsby-source-filesystem',
       options: {
-        trackingId: "UA-130176513-2",
+        path: `${__dirname}/content/blog`,
+        name: 'blog',
       },
     },
-    "gatsby-plugin-react-helmet",
-    "gatsby-plugin-sitemap",
     {
-      resolve: "gatsby-plugin-manifest",
+      resolve: 'gatsby-source-filesystem',
       options: {
-        icon: "src/images/icon.png",
+        path: `${__dirname}/content/assets`,
+        name: 'assets',
       },
     },
-    "gatsby-plugin-mdx",
-    "gatsby-plugin-sharp",
-    "gatsby-transformer-sharp",
     {
-      resolve: "gatsby-source-filesystem",
+      resolve: 'gatsby-plugin-sass',
+    },
+    'gatsby-plugin-image',
+    'gatsby-plugin-react-helmet',
+    'gatsby-plugin-sitemap',
+    {
+      resolve: 'gatsby-plugin-manifest',
       options: {
-        name: "images",
-        path: "./src/images/",
+        icon: 'src/images/icon.png',
       },
-      __key: "images",
     },
     {
-      resolve: "gatsby-source-filesystem",
+      resolve: 'gatsby-plugin-mdx',
       options: {
-        name: "pages",
-        path: "./src/pages/",
+        extensions: ['.md', '.mdx'],
+        remarkPlugins: [],
+        gatsbyRemarkPlugins: [
+          {
+            resolve: 'gatsby-remark-external-links',
+          },
+          {
+            resolve: 'gatsby-remark-images',
+            options: {
+              maxWidth: 590,
+            },
+          },
+          {
+            resolve: 'gatsby-remark-responsive-iframe',
+            options: {
+              wrapperStyle: 'margin-bottom: 1.0725rem',
+            },
+          },
+          {
+            resolve: 'gatsby-remark-prismjs',
+          },
+          {
+            resolve: 'gatsby-remark-copy-linked-files',
+          },
+          {
+            resolve: 'gatsby-remark-smartypants',
+          },
+        ]
       },
-      __key: "pages",
+    },
+    'gatsby-plugin-sharp',
+    'gatsby-transformer-sharp',
+    {
+      resolve: 'gatsby-source-filesystem',
+      options: {
+        name: 'images',
+        path: './src/images/',
+      },
+      __key: 'images',
+    },
+    {
+      resolve: 'gatsby-source-filesystem',
+      options: {
+        name: 'pages',
+        path: './src/pages/',
+      },
+      __key: 'pages',
+    },
+    {
+      resolve: 'gatsby-plugin-nprogress',
+      options: {
+        color: '#f92300',
+        showSpinner: false,
+      },
     },
   ],
 };

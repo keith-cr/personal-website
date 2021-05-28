@@ -1,54 +1,42 @@
-import * as React from "react"
-import { Link } from "gatsby"
+import * as React from 'react';
+import classNames from 'classnames';
+import { Link } from 'gatsby';
 
-// styles
-const pageStyles = {
-  color: "#232129",
-  padding: "96px",
-  fontFamily: "-apple-system, Roboto, sans-serif, serif",
-}
-const headingStyles = {
-  marginTop: 0,
-  marginBottom: 64,
-  maxWidth: 320,
-}
-
-const paragraphStyles = {
-  marginBottom: 48,
-}
-const codeStyles = {
-  color: "#8A6534",
-  padding: 4,
-  backgroundColor: "#FFF4DB",
-  fontSize: "1.25rem",
-  borderRadius: 4,
-}
+import SEO from '../components/seo';
+import Footer from '../components/footer';
+import NavBar from '../components/navbar';
+import useDarkMode from '../hooks/useDarkMode';
 
 // markup
 const NotFoundPage = () => {
+  let darkMode = useDarkMode();
+  
   return (
-    <main style={pageStyles}>
-      <title>Not found</title>
-      <h1 style={headingStyles}>Page not found</h1>
-      <p style={paragraphStyles}>
-        Sorry{" "}
-        <span role="img" aria-label="Pensive emoji">
-          😔
-        </span>{" "}
-        we couldn’t find what you were looking for.
-        <br />
-        {process.env.NODE_ENV === "development" ? (
-          <>
-            <br />
-            Try creating a page in <code style={codeStyles}>src/pages/</code>.
-            <br />
-          </>
-        ) : null}
-        <br />
-        <Link to="/">Go home</Link>.
-      </p>
-    </main>
-  )
-}
+    <>
+      <SEO title="Page Not Found" description="The content you were looking for could not be found." />
+      <section className={classNames('hero', 'hero-pnf', 'is-fullheight', { 'is-white': !darkMode.value }, { 'is-black': darkMode.value })}>
+        <div className="hero-head">
+          <NavBar active="home" darkMode={darkMode} />
+        </div>
 
-export default NotFoundPage
+        <div className="hero-body">
+          <div className="container has-text-centered intro-container">
+            <h1 className="title pnf-text">
+              Page Not Found
+            </h1>
+            <div className="subtitle is-size-3">
+              The content you were looking for could not be found.
+            </div>
+            <Link to="/" className="button is-large is-primary">Go Home</Link>
+          </div>
+        </div>
+
+        <div className="hero-foot">
+          <Footer />
+        </div>
+      </section>
+    </>
+  );
+};
+
+export default NotFoundPage;

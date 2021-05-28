@@ -1,0 +1,423 @@
+@charset "utf-8";
+$primary: #f92300;
+$link: $primary;
+$link-hover: findLightColor($link);
+$footer-background-color: #fff;
+@import "~bulma/bulma.sass";
+@import "react-toggle/style.css";
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed&family=Open+Sans&display=swap');
+
+body {
+  min-height: 100vh;
+}
+
+body.has-background-black {
+  scrollbar-color: dark;
+}
+
+.navbar-brand > .navbar-item {
+  padding-top: 0;
+  padding-bottom: 0;
+  font-size: 1.7rem;
+  font-family: 'Barlow Semi Condensed', sans-serif;
+}
+
+.navbar.is-black, .navbar.is-dark, .navbar.is-white {
+  .navbar-brand#brandKCR > a.navbar-item, .navbar-brand#brandKCR > a.navbar-item:hover {
+    color: $primary;
+  }
+}
+
+.navbar.is-black, .navbar.is-dark {
+  background: none;
+}
+
+.navbar .navbar-brand > .navbar-item:hover {
+  background-color: transparent;
+}
+
+.navbar-item {
+  margin-left: 5px;
+  margin-right: 5px;
+}
+
+@keyframes strikethrough {
+	from {
+		transform: scaleX(0);
+	}
+	to {
+		transform: scaleX(1);
+	}
+}
+
+.strikethrough {
+	display: inline-block;
+	position: relative;
+	transition: all 0.5s cubic-bezier(.55, 0, .1, 1);
+}
+
+.strikethrough:after {
+	content: '';
+	position: absolute;
+	display: block;
+	width: 100%;
+	height: 2px;
+	box-shadow: 0 1px rgba(255,255,255,0.6);
+	margin-top: -0.7em;
+	background: black;
+	transform-origin: center left;
+	animation: strikethrough 1s 0.5s cubic-bezier(.55, 0, .1, 1) 1;
+	transition: transform 0.5s cubic-bezier(.55, 0, .1, 1);
+  animation-fill-mode: both;
+  animation-delay: 10.5s;
+}
+
+.has-text-white .strikethrough:after {
+	background: white;
+}
+
+
+.intro-container {
+  margin-bottom: 10rem;
+}
+
+.intro-text {
+  font-size: 5rem;
+}
+
+.timeline {
+  background-color: #f5f5f5;
+  padding: 0;
+}
+
+.vertical-timeline-element--work .vertical-timeline-element-content {
+  border-top: 3px solid #801A86;
+}
+
+.vertical-timeline-element--education .vertical-timeline-element-content {
+  border-top: 3px solid #9A0913;
+}
+
+.vertical-timeline-element--project .vertical-timeline-element-content {
+  border-top: 3px solid #F3B700;
+}
+
+.vertical-timeline-element-date {
+color: #333;
+}
+
+.vertical-timeline::before {
+  background: #424242;
+}
+
+.vertical-timeline-element-title {
+  font-weight: bold;
+}
+
+.kcr-vertical-timeline .vertical-timeline-element-content p {
+  margin-top: .6em;
+  font-weight: normal;
+}
+
+.kcr-vertical-timeline .tags {
+  margin-top: .3em;
+  margin-bottom: 0;
+}
+
+.kcr-vertical-timeline .tags .tag {
+  margin-bottom: 0rem;
+}
+
+.wave {
+  animation-name: wave-animation;  /* Refers to the name of your @keyframes element below */
+  animation-duration: 2.5s;        /* Change to speed up or slow down */
+  animation-iteration-count: infinite;  /* Never stop waving :) */
+  transform-origin: 70% 70%;       /* Pivot around the bottom-left palm */
+  display: inline-block;
+}
+
+.hand .wave {
+  animation-delay: 800ms;
+}
+
+.hand {
+  animation-name: show-hand;
+  animation-duration: 1600ms;
+  animation-delay: 900ms;
+  animation-fill-mode: forwards;
+  display: inline-block;
+  position: absolute; 
+  visibility: hidden; 
+}
+
+@keyframes wave-animation {
+    0% { transform: rotate( 0.0deg) }
+   10% { transform: rotate(14.0deg) }  /* The following five values can be played with to make the waving more or less extreme */
+   20% { transform: rotate(-8.0deg) }
+   30% { transform: rotate(14.0deg) }
+   40% { transform: rotate(-4.0deg) }
+   50% { transform: rotate(10.0deg) }
+   60% { transform: rotate( 0.0deg) }  /* Reset for the last half to pause */
+  100% { transform: rotate( 0.0deg) }
+}
+
+@keyframes show-hand {
+  0% { visibility: visible; }
+  100% { position: absolute; visibility: hidden; }
+}
+
+@media screen and (min-weight: 1024px) {
+  .container.section {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+
+footer.footer {
+  padding-bottom: 3rem;
+  background-color: inherit;
+}
+
+footer.footer .footer-icons a {
+  color: inherit;
+}
+
+body.has-text-white {
+  .content h1, .content h2, .content h3, .content h4, .content h5, .content h6, .title {
+    color: #f5f5f5;
+  }
+  .subtitle {
+    color: #c5c5c5;
+  }
+  .subtitle strong {
+    color: #fff;
+  }
+  strong {
+    color: #fff;
+  }
+  .vertical-timeline-element-date {
+    color: #f5f5f5;
+  }
+  hr {
+    background-color: #d2d2d2;
+  }
+}
+
+body.has-background-black {
+  .card {
+    background-color: #000;
+  }
+  .timeline {
+    background-color: #000;
+  }
+  .vertical-timeline-element-content {
+    background: #000;
+    box-shadow: 0 3px 0 #1f1f1f;
+  }
+  .vertical-timeline-element-content-arrow {
+    border-right: 7px solid #000;
+  }
+  .vertical-timeline-element-icon {
+    box-shadow: 0 0 0 4px #0a0a0a, inset 0 2px 0 rgb(0 0 0 / 8%), 0 3px 0 4px rgb(0 0 0 / 5%);
+  }
+  .vertical-timeline::before {
+    background: #0a0a0a;
+  }
+  .hero.is-white {
+    background-color: #0a0a0a;
+    color: white;
+  }
+  .navbar.is-white {
+    background: none;
+    color: #fff;  
+  }
+  .navbar.is-white .navbar-brand > .navbar-item,
+  .navbar.is-white .navbar-brand .navbar-link {
+    color: #fff;
+  }
+  .button.is-primary.is-light {
+    background-color: #f92300;
+    border-color: transparent;
+    color: #fff;
+
+    &:active, &.is-active {
+      background-color: #e01f00;
+      border-color: transparent;
+      color: #fff;
+    }
+
+    &:focus:not(:active), &.is-focused:not(:active) {
+      box-shadow: 0 0 0 0.125em rgb(249 35 0 / 25%);
+    }
+
+    &:hover, &.is-hovered {
+      background-color: #ec2100;
+      border-color: transparent;
+      color: #fff;
+    }
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  body.has-background-black {
+    .navbar.is-white .navbar-start > .navbar-item,
+    .navbar.is-white .navbar-start .navbar-link,
+    .navbar.is-white .navbar-end > .navbar-item,
+    .navbar.is-white .navbar-end .navbar-link {
+      color: #fff;
+    }
+    .navbar.is-white .navbar-start > a.navbar-item:focus, .navbar.is-white .navbar-start > a.navbar-item:hover, .navbar.is-white .navbar-start > a.navbar-item.is-active,
+    .navbar.is-white .navbar-start .navbar-link:focus,
+    .navbar.is-white .navbar-start .navbar-link:hover,
+    .navbar.is-white .navbar-start .navbar-link.is-active,
+    .navbar.is-white .navbar-end > a.navbar-item:focus,
+    .navbar.is-white .navbar-end > a.navbar-item:hover,
+    .navbar.is-white .navbar-end > a.navbar-item.is-active,
+    .navbar.is-white .navbar-end .navbar-link:focus,
+    .navbar.is-white .navbar-end .navbar-link:hover,
+    .navbar.is-white .navbar-end .navbar-link.is-active {
+      background-color: #292929;
+      color: #fff;
+    }
+    .navbar.is-white .navbar-start .navbar-link::after,
+    .navbar.is-white .navbar-end .navbar-link::after {
+      border-color: #fff;
+    }
+    .navbar.is-white .navbar-item.has-dropdown:focus .navbar-link,
+    .navbar.is-white .navbar-item.has-dropdown:hover .navbar-link,
+    .navbar.is-white .navbar-item.has-dropdown.is-active .navbar-link {
+      background-color: #292929;
+      color: #fff;
+    }
+    .navbar.is-white .navbar-dropdown a.navbar-item.is-active {
+      background-color: #363636;
+      color: #fff;
+    }
+  }
+}
+
+
+@media screen and (max-width: 1023px) {
+  a.navbar-item:focus, a.navbar-item:focus-within, a.navbar-item:hover, a.navbar-item.is-active, .navbar-link:focus, .navbar-link:focus-within, .navbar-link:hover, .navbar-link.is-active {
+    background-color: #fafafa;
+    color: inherit;
+  }
+
+  body.has-background-black {
+    .navbar-menu {
+      background-color: #000;
+    }
+    a.navbar-item:focus, a.navbar-item:focus-within, a.navbar-item:hover, a.navbar-item.is-active, .navbar-link:focus, .navbar-link:focus-within, .navbar-link:hover, .navbar-link.is-active {
+      background-color: rgb(41, 41, 41);
+    }
+    .hero.is-black a.navbar-item:hover, .hero.is-black a.navbar-item.is-active, .hero.is-black .navbar-link:hover, .hero.is-black .navbar-link.is-active {
+      background-color: rgb(41, 41, 41);
+    }
+  }
+  body.has-text-white {
+    .navbar-item, .navbar-link {
+      color: #fff;
+    }
+  }
+}
+
+
+.hero-foot footer.footer {
+  padding-bottom: 2rem;
+}
+
+.copyright {
+  font-family: 'Open Sans', sans-serif;
+}
+
+.dark-mode-toggle.react-toggle--checked .react-toggle-track, 
+.dark-mode-toggle.react-toggle--checked .react-toggle-track:hover, 
+.dark-mode-toggle.react-toggle--checked .react-toggle-track:focus, 
+.dark-mode-toggle.react-toggle--checked .react-toggle-track:active {
+  background-color: #fcdb49;
+}
+
+.dark-mode-toggle.react-toggle:not(.react-toggle--checked) .react-toggle-track, 
+.dark-mode-toggle.react-toggle--checked:not(.react-toggle--checked) .react-toggle-track:hover, 
+.dark-mode-toggle.react-toggle--checked:not(.react-toggle--checked) .react-toggle-track:focus, 
+.dark-mode-toggle.react-toggle--checked:not(.react-toggle--checked) .react-toggle-track:active {
+  background-color: #4d4d4d;
+}
+
+
+.react-toggle--checked .react-toggle-thumb {
+  border-color: #fcdb49;
+}
+
+.react-toggle--checked:hover:not(.react-toggle--disabled) .react-toggle-track {
+  background-color: #fcdb49;
+}
+
+.dark-mode-toggle.react-toggle--focus .react-toggle-thumb {
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+}
+
+.dark-mode-toggle.react-toggle:active:not(.react-toggle--disabled) .react-toggle-thumb {
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+}
+
+.react-toggle .MuiSvgIcon-root {
+  font-size: 1rem;
+  color: #fff;
+}
+
+.react-toggle-track-check {
+  display: flex;
+  align-items: center;
+}
+
+.react-toggle-track-x {
+  display: flex;
+  align-items: center;
+}
+
+[data-color-scheme="dark"] {
+  color-scheme: dark;
+}
+
+[data-color-scheme="light"] {
+  color-scheme: light;
+}
+
+.kcr-vertical-timeline .tag-wordpress {
+  background-color: #21759b;
+  color: #fff;
+}
+
+.kcr-vertical-timeline .tag-html {
+  background-color: #E44D26;
+  color: #fff;
+}
+
+.kcr-vertical-timeline .tag-node {
+  background-color: #3c873a;
+  color: #fff;
+}
+
+.kcr-vertical-timeline .tag-react {
+  background-color: #61DBFB;
+  color: #fff;
+}
+
+.kcr-vertical-timeline .tag-python {
+  background-color: #FFD43B;
+  color: #fff;
+}
+
+.hero-pnf .pnf-text {
+  font-size: 5rem;
+  margin-bottom: .75em;
+}
+
+.hero-pnf .button {
+  margin-top: .75em;
+}
