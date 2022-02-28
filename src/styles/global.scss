@@ -15,6 +15,10 @@ body.has-background-black {
   scrollbar-color: dark;
 }
 
+html {
+  overflow: auto;
+}
+
 .navbar-brand > .navbar-item {
   padding-top: 0;
   padding-bottom: 0;
@@ -91,7 +95,7 @@ body.has-background-black {
 }
 
 .vertical-timeline-element--work .vertical-timeline-element-content {
-  border-top: 3px solid #801A86;
+  border-top: 3px solid #357DED;
 }
 
 .vertical-timeline-element--education .vertical-timeline-element-content {
@@ -211,7 +215,7 @@ body.has-background-black {
     background-color: #000;
   }
   .timeline {
-    background-color: #000;
+    background-color: #662C91;
   }
   .vertical-timeline-element-content {
     background: #000;
@@ -403,6 +407,11 @@ body.has-background-black {
 
 .kcr-vertical-timeline .tag-node {
   background-color: #3c873a;
+  color: #fff;
+}
+
+.kcr-vertical-timeline .tag-java {
+  background-color: #FFA518;
   color: #fff;
 }
 

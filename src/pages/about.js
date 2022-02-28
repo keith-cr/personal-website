@@ -13,6 +13,10 @@ const BlogPage = () => {
   const resumeEmailURL = 'mailto:keith@kmddigital.com?subject=Resume%20Request&body=Hello%20Keith%2C%0A%0AI\'m%20contacting' + 
     '%20you%20to%20request%20a%20copy%20of%20your%20resume.';
 
+  const workIconStyle = { background: '#357DED', color: '#fff'  };
+  const schoolIconStyle = { background: '#9A0913', color: '#fff' };
+  const projectIconStyle = { background: '#F3B700', color: '#fff' };
+
   return (
     <>
       <SEO title="About" description="My name is Keith and I'm a entrepreneur, software developer and student." />
@@ -35,8 +39,23 @@ const BlogPage = () => {
             <VerticalTimelineElement 
               intersectionObserverProps={{ triggerOnce: true }}
               className="vertical-timeline-element--work"
+              date="June 2021 - August 2021"
+              iconStyle={workIconStyle}
+              icon={<WorkIcon />}
+            >
+              <h3 className="vertical-timeline-element-title">Amazon</h3>
+              <h4 className="vertical-timeline-element-subtitle">Software Development Engineer Intern</h4>
+              <div className="tags">
+                <span className="tag tag-node is-small">Node.js</span>
+                <span className="tag tag-react is-small">React</span>
+                <span className="tag tag-java is-small">Java</span>
+              </div>
+            </VerticalTimelineElement>
+            <VerticalTimelineElement 
+              intersectionObserverProps={{ triggerOnce: true }}
+              className="vertical-timeline-element--work"
               date="June 2020 - August 2020"
-              iconStyle={{ background: '#801A86', color: '#fff' }}
+              iconStyle={workIconStyle}
               icon={<WorkIcon />}
             >
               <h3 className="vertical-timeline-element-title">Vibenomics</h3>
@@ -53,7 +72,7 @@ const BlogPage = () => {
               intersectionObserverProps={{ triggerOnce: true }}
               className="vertical-timeline-element--work"
               date="June 2019 - August 2019"
-              iconStyle={{ background: '#801A86', color: '#fff' }}
+              iconStyle={workIconStyle}
               icon={<WorkIcon />}
             >
               <h3 className="vertical-timeline-element-title">Legislative Services Agency</h3>
@@ -69,7 +88,7 @@ const BlogPage = () => {
               intersectionObserverProps={{ triggerOnce: true }}
               className="vertical-timeline-element--education"
               date="August 2018 - May 2022"
-              iconStyle={{ background: '#9A0913', color: '#fff' }}
+              iconStyle={schoolIconStyle}
               icon={<SchoolIcon />}
             >
               <h3 className="vertical-timeline-element-title">Rose-Hulman Institue of Technology</h3>
@@ -79,7 +98,7 @@ const BlogPage = () => {
               intersectionObserverProps={{ triggerOnce: true }}
               className="vertical-timeline-element--project"
               date="June 2016 - August 2018"
-              iconStyle={{ background: '#F3B700', color: '#fff' }}
+              iconStyle={projectIconStyle}
               icon={<ImportantDevicesIcon />}
             >
               <h3 className="vertical-timeline-element-title">WaitMate</h3>
@@ -98,7 +117,7 @@ const BlogPage = () => {
               intersectionObserverProps={{ triggerOnce: true }}
               className="vertical-timeline-element--education"
               date="August 2014 - June 2018"
-              iconStyle={{ background: '#9A0913', color: '#fff' }}
+              iconStyle={schoolIconStyle}
               icon={<SchoolIcon />}
             >
               <h3 className="vertical-timeline-element-title">Columbus Academy</h3>
@@ -108,7 +127,7 @@ const BlogPage = () => {
               intersectionObserverProps={{ triggerOnce: true }}
               className="vertical-timeline-element--project"
               date="June 2014 - August 2016"
-              iconStyle={{ background: '#F3B700', color: '#fff' }}
+              iconStyle={projectIconStyle}
               icon={<ImportantDevicesIcon />}
             >
               <h3 className="vertical-timeline-element-title">Feedopoly</h3>
@@ -124,7 +143,7 @@ const BlogPage = () => {
               intersectionObserverProps={{ triggerOnce: true }}
               className="vertical-timeline-element--project"
               date="July 2013 - September 2014"
-              iconStyle={{ background: '#F3B700', color: '#fff' }}
+              iconStyle={projectIconStyle}
               icon={<ImportantDevicesIcon />}
             >
               <h3 className="vertical-timeline-element-title">Business Media</h3>
