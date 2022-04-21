@@ -25,7 +25,7 @@ class BlogPostTemplate extends React.Component {
             <div className="content">
               <MDXRenderer>{post.body}</MDXRenderer>
             </div>
-            <hr/>
+            <hr className="blog-hr" />
             <div className="card">
               <div className="card-content">
                 <div className="media">

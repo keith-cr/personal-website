@@ -1,0 +1,63 @@
+---
+title: How To Host Your Side Project For Free
+date: '2022-04-21'
+published: true
+---
+
+Having a programming side project can be a great way to show off your skills, learn new technologies, or build something cool. However, given you aren't getting paid for the said side project, you likely don't want to spend a lot, if any, on infrastructure. (Assuming, of course, you're building a side project that requires some sort of infrastructure). Previously, this typically involved renting a cheap virtual server for a monolithic app that has an API or renders web pages, which was often neither free nor easily scalable.
+
+However, the modern infrastructure of these types of applications has changed dramatically over the past few years and these new infrastructures can not only result in better applications but also reduced costs and have some awesome free offerings. By following industry standards of separating the frontend and backend of the application (or not having one or the other), we can take advantage of the new infrastructure types that have emerged and their savings.
+
+So, for your next project, take a look at the options below for hosting frontends, backends, and even databases for free. And these options aren't just free trials or small VMs that will overload with any sort of decent traffic, these are free forever offerings for distributed systems that can scale infinitely and are also used by major players. Just be aware that significant traffic beyond that of a side project may still cost you a pretty penny.
+
+<aside class="menu">
+  <p class="menu-label">
+    Table of Contents
+  </p>
+  <ul class="menu-list">
+    <li><a href="#frontend-website-static-hosting">Frontend Website: Static Hosting</a></li>
+    <li><a href="#backend-server-serverless-hosting">Backend Server: Serverless Hosting</a></li>
+    <li><a href="#database">Database</a></li>
+    <li><a href="#conclusion">Conclusion</a></li>
+  </ul>
+</aside>
+
+# Frontend Website: Static Hosting
+Likely, if you're building a frontend using today's modern tools, you're building a single-page app using technologies like [React](https://reactjs.org/) or [Vue](https://vuejs.org/). Unlike a traditional monolithic app, these pages are rendered in the browser and often fetch data through API calls. These are called static sites since the HTML, CSS, and JavaScript are the same for each request since the data isn't fetched until later. Since the relevant code simply needs to be stored and sent to the browser, these sites are incredibly cheap to host (a matter of cents per month) and many major infrastructure services will let you host them for free.
+
+The leader in this category is Netlify and Vercel, supporting both static and hybrid sites (a note on these below). Both offer generous free plans that allow you to host any number of sites. While they do have the bandwidth and build minute limits, these are generous enough that should be sufficient for any side project that doesn't get a significant amount of traffic or is updated significantly.
+
+While Netlify and Vercel are currently the best platforms (at least IMO), most major cloud platforms also have their own offerings of static hostings, such as [AWS Amplify](https://aws.amazon.com/amplify/) or [Firebase Hosting](https://firebase.google.com/docs/hosting). You can choose whichever you feel fits your project best.
+
+Hybrid sites, such as those built with [Next.js](https://nextjs.org/), allow you to determine whether you want to render some pages on the server-side and some on the client-side and are also supported by both Netlify and Vercel (Vercel actually built Next.js). Support for these types of sites on other services may vary, for example, AWS Amplify doesn't currently support the latest version of Next.js. These companies allow hosting hybrid sites for free as well by using serverless functions for the server-side rendered pages, which is explained in the [backend section](#backend-server-serverless-hosting).
+
+### Deploy Previews
+In addition to being free, these services also offer one major awesome feature that you don't get with a traditional server, deploy previews. For those unfamiliar, deploy previews allow you to create a new hosted version of your site for every git commit or pull request you create. Because these sites are so cheap to host, hosting multiple versions is no big deal. So, for each change you make, you can preview a separate version of your site with these changes, before sending these changes to production. This is extremely helpful when working with other developers or stakeholders, as anyone can easily see and share exactly what the results of the changes are without needing to run the project locally.
+
+# Backend Server: Serverless Hosting
+While some side projects can be created using just a static site, often you need some backend code to add necessary functionality, such as connecting to a database or third-party service. Typically, you have a server running that can accept HTTP requests to different endpoints, run the required business logic, and return any necessary data. This causes the previously mentioned problem of needing a server, perhaps virtualized, which won't scale easily and still costs at least a few dollars per month. Luckily, a new backend infrastructure, serverless, has emerged. The basic principle behind serverless is instead of having a server that always running, you have code that is only run when an event is triggered, such as an HTTP call. That's where the infrastructure gets its name, serverless, as in there is no running server, at least not one the developer has to be concerned about. In reality, a server is quickly run and then torn down once the request completes. Because these servers can be created and destroyed as needed by the serverless platform, code running on these platforms can quickly be scaled up and down to accommodate demand without the developer needing to do anything.
+
+Cloud platforms like AWS, Azure, and Google Cloud Platform all offer their own serverless platforms, most with generous free tiers. For example, [AWS Lambda](https://aws.amazon.com/lambda/) offers 1 million requests free per month and up to 3.2 million seconds of compute time, which is more than enough for a small side project. Just be sure to enable usage alerts, so you can shut down the service if it exceeds your monthly usage due to a huge traffic spike, as otherwise, your chosen platform will charge you.
+
+Going serverless does require learning an additional platform, but the open-source [Serverless Framework](https://www.serverless.com/framework), which is compatible with all the mentioned platforms and more, makes it super simple to build an API or convert an existing one in the language of your choice. Each platform may also have its own tool to easily build on its serverless platform if you would prefer to learn that instead.
+
+Be aware, however, that serverless isn't the perfect infrastructure for every project and it definitely won't replace traditional servers or containers, at least in its current state. It often can't handle sustained connections for long periods and can have cold start times when a piece of code hasn't been run in a while. That being said, it's still a very good choice for most API use cases and has been used by many major companies, including the BBC, [who ported their entire online platform to serverless](https://medium.com/bbc-design-engineering/bbc-online-a-year-with-serverless-ffc2ae474277).
+
+# Database
+With the frontend and backend covered, there is one last major piece of infrastructure you may need for your side project, a database. Serverless databases are a thing, but not all of them have as generous free tiers as serverless compute platforms. However, there are still several good database services with generous free tiers, all of which happen to be serverless, so they can scale on-demand as needed.
+
+### DynamoDB
+[DynamoDB](https://aws.amazon.com/dynamodb/) is a NoSQL database offered by AWS. AWS offers 25 GB of storage per month and claims to provide enough read and writes to handle up to 200 million requests per month.
+
+### Firebase Cloud Firestore
+[Firebase Cloud Firestore](https://firebase.google.com/products/firestore) is a NoSQL database from Google that, unlike most databases, can be queried directly from the client-side (web or mobile apps) without needing to go through a backend server, although you can still use it through a backend API if you so chose. Firestore's free plan includes 1 GB of storage per month, 20K writes/day and 50K reads/day. 
+
+### PlanetScale
+If you need an SQL database, [PlanetScale](https://planetscale.com/) is the way to go. It's a serverless MySQL compatible database that can scale up and down just like serverless code and heavily focuses on integration into the developer's workflow. PlanetScale offers 10 GB storage, 1 billion reads, and 10 million writes per month with a 1,000 concurrent connections limit. Interestingly enough, PlanetScale also offers 3 "branches" per database, a unique feature to PlanetScale that allows you to have different schemas per branch.
+
+Choosing which database you want to use is ultimately up to you and these are by no means the only options. If you aren't sure and you use AWS or GCP for your serverless platform, then going with their database option might make sense. Otherwise, if you know you want to have an SQL database, then PlanetScale is for you.
+
+# Conclusion
+I took a similar approach recently while developing the architecture for a greenfield project. While we were able to propose a budget to a client, we still decided to use Netlify and AWS Lambda, taking advantage of their free tiers. We used Amazon RDS instead of one of the other databases with a free forever tier, with its cost being the majority of the budget we did propose. Regardless of the database cost, we still saved our client from paying any for the frontend and backend infrastructure.
+
+By taking advantage of static sites and serverless platforms, you can take advantage of the generous free offerings from cloud providers to host your next side project for free. And since you likely don't want to foot the bill side project you won't see any immediate funds from, being able to deploy it for free is a major plus. And as an added bonus, both static sites and serverless APIs can be easily, and often automatically, scaled up in the future if your project takes off. It's often just a matter of accepting a larger bill, rather than the complicated engineering of previous infrastructures.

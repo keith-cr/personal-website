@@ -11,12 +11,83 @@ body {
   min-height: 100vh;
 }
 
+.content ul.menu-list, .content ul.menu-list ul {
+  list-style: none;
+  margin: 0;
+}
+
+.content .menu-list li ul {
+  border-left: 1px solid #dbdbdb;
+  margin: 0.75em;
+  padding-left: 0.75em;
+}
+
 body.has-background-black {
   scrollbar-color: dark;
 }
 
 html {
   overflow: auto;
+  scroll-behavior: smooth;
+}
+
+.gatsby-highlight-code-line {
+	background: hsla(220, 100%, 80%, 0.04);
+  display: block;
+}
+
+/**
+ * Add back the container background-color, border-radius, padding, margin
+ * and overflow that we removed from <pre>.
+ */
+.gatsby-highlight {
+  background-color: hsl(220, 13%, 18%);
+  border-radius: 0.3em;
+  margin: 0.5em 0;
+  padding: 1em;
+  overflow: auto;
+}
+
+/**
+ * Remove the default PrismJS theme background-color, border-radius, margin,
+ * padding and overflow.
+ * 1. Make the element just wide enough to fit its content.
+ * 2. Always fill the visible space in .gatsby-highlight.
+ * 3. Adjust the position of the line numbers
+ */
+.gatsby-highlight pre[class*="language-"] {
+  background-color: transparent;
+  margin: 0;
+  padding: 0;
+  overflow: initial;
+  float: left; /* 1 */
+  min-width: 100%; /* 2 */
+}
+
+/* Adjust the position of the line numbers */
+.gatsby-highlight pre[class*="language-"].line-numbers {
+  padding-left: 2.8em;
+}
+
+.command-line-prompt > span:before {
+  color: #999;
+  content: " ";
+  display: block;
+  padding-right: 0.8em;
+}
+
+/* Prompt for all users */
+.command-line-prompt > span[data-user]:before {
+  content: "[" attr(data-user) "@" attr(data-host) "] $";
+}
+
+/* Prompt for root */
+.command-line-prompt > span[data-user="root"]:before {
+  content: "[" attr(data-user) "@" attr(data-host) "] #";
+}
+
+.command-line-prompt > span[data-prompt]:before {
+  content: attr(data-prompt);
 }
 
 .navbar-brand > .navbar-item {
@@ -79,7 +150,6 @@ html {
 .has-text-white .strikethrough:after {
 	background: white;
 }
-
 
 .intro-container {
   margin-bottom: 10rem;
@@ -208,11 +278,23 @@ body.has-text-white {
   .footer-icons {
     color: #fff;
   }
+  .menu-list a {
+    color: #f5f5f5;
+  }
+  .menu-list a:hover {
+    background-color: #282828;
+  }
+  .menu-label {
+    color: #c5c5c5;
+  }
+  a.anchor {
+    fill: #f5f5f5;
+  }
 }
 
 body.has-background-black {
   .card {
-    background-color: #000;
+    background-color: #662C91;
   }
   .timeline {
     background-color: #662C91;
@@ -262,6 +344,9 @@ body.has-background-black {
       border-color: transparent;
       color: #fff;
     }
+  }
+  #gatsby-plugin-page-progress {
+    background-color: #662C91 !important;  
   }
 }
 
@@ -436,4 +521,18 @@ body.has-background-black {
 
 .footer-icons {
   color: #0a0a0a;
+}
+
+.content .tag, .content .number {
+  display: inline;
+  padding: inherit;
+  font-size: inherit;
+  line-height: inherit;
+  text-align: inherit;
+  vertical-align: inherit;
+  border-radius: inherit;
+  font-weight: inherit;
+  white-space: inherit;
+  background: inherit;
+  margin: inherit;
 }

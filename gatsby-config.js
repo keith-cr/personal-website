@@ -55,6 +55,9 @@ module.exports = {
         remarkPlugins: [],
         gatsbyRemarkPlugins: [
           {
+            resolve: 'gatsby-remark-autolink-headers',
+          },
+          {
             resolve: 'gatsby-remark-external-links',
           },
           {
@@ -71,6 +74,9 @@ module.exports = {
           },
           {
             resolve: 'gatsby-remark-prismjs',
+            options: {
+              showLineNumbers: true,
+            }
           },
           {
             resolve: 'gatsby-remark-copy-linked-files',
@@ -104,6 +110,17 @@ module.exports = {
       options: {
         color: '#f92300',
         showSpinner: false,
+      },
+    },
+    {
+      resolve: 'gatsby-plugin-page-progress',
+      options: {
+        includePaths: [{ regex: '^/blog' }],
+        excludePaths: ['/blog'],
+        height: 3,
+        prependToBody: false,
+        color: '#f92300',
+        footerHeight: 300
       },
     },
   ],
