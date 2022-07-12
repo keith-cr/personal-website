@@ -10,32 +10,42 @@ import ImportantDevicesIcon from '@material-ui/icons/ImportantDevices';
 import WorkIcon from '@material-ui/icons/Work';
 
 const BlogPage = () => {
-  const resumeEmailURL = 'mailto:keith@kmddigital.com?subject=Resume%20Request&body=Hello%20Keith%2C%0A%0AI\'m%20contacting' + 
-    '%20you%20to%20request%20a%20copy%20of%20your%20resume.';
-
   const workIconStyle = { background: '#357DED', color: '#fff'  };
   const schoolIconStyle = { background: '#9A0913', color: '#fff' };
   const projectIconStyle = { background: '#F3B700', color: '#fff' };
 
   return (
     <>
-      <SEO title="About" description="My name is Keith and I'm a entrepreneur, software developer and student." />
+      <SEO title="About" description="My name is Keith and I'm a software developer amd tech enthusiast." />
       <NavBar active="about" />
       <div className=" section pb-0">
         <div className="container">
           <h1 className="title is-1">About Me</h1>
-          <p className="mb-2">My name is Keith and I&apos;m an entrepreneur, software developer and student.</p>
-          <p className="mb-2">I&apos;m currently studying computer science at Rose-Hulman Institute of Technology. In the little free time I 
-            have, I enjoy video games, music, and making memories with friends.</p>
-          <p className="mb-2">In addition to my studies, I&apos;ve created several startups and worked on various side projects. I will occasionally do work for my 
-            company, <a href="https://kmddigital.com">KMD Digital</a>. Request my <a href={resumeEmailURL}>resume</a> for more information about 
-            my skills and previous experience.</p>
+          <p className="mb-2">My name is Keith and I&apos;m a software developer currently living in Seattle, WA.</p>
+          <p className="mb-2">I graduated from Rose-Hulman Institue of Technology with a degree in Computer Science, but I&apos;ve been working on real world software development projects since long before that. Throughout my education, I&apos;ve created several startups and worked on various side projects. 
+            See below for more information about my skills and previous experience.</p>
+          <p className="mb-2">In my free time, I enjoy video games, music, various forms of video entertainment, and making memories with friends.</p>
           <h2 className="title is-2 mt-4 mb-4">My History</h2>
         </div>
       </div>
       <div className="section timeline">
         <div className="container">
           <VerticalTimeline className="kcr-vertical-timeline">
+            <VerticalTimelineElement 
+              intersectionObserverProps={{ triggerOnce: true }}
+              className="vertical-timeline-element--work"
+              date="July 2022 - Present"
+              iconStyle={workIconStyle}
+              icon={<WorkIcon />}
+            >
+              <h3 className="vertical-timeline-element-title">Amazon</h3>
+              <h4 className="vertical-timeline-element-subtitle">Software Development Engineer</h4>
+              <div className="tags">
+                <span className="tag tag-node is-small">Node.js</span>
+                <span className="tag tag-react is-small">React</span>
+                <span className="tag tag-java is-small">Java</span>
+              </div>
+            </VerticalTimelineElement>
             <VerticalTimelineElement 
               intersectionObserverProps={{ triggerOnce: true }}
               className="vertical-timeline-element--work"

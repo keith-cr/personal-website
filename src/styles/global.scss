@@ -144,7 +144,7 @@ html {
 	animation: strikethrough 1s 0.5s cubic-bezier(.55, 0, .1, 1) 1;
 	transition: transform 0.5s cubic-bezier(.55, 0, .1, 1);
   animation-fill-mode: both;
-  animation-delay: 10.5s;
+  animation-delay: 2s;
 }
 
 .has-text-white .strikethrough:after {

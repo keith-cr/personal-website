@@ -18,10 +18,11 @@ const IndexPage = () => {
     const typeIn4 = document.querySelector('.type-in-4');
     typeIn4.innerHTML = '';
     let init4 = () => {
+      typeIn4.classList.add('strikethrough');
       init(typeIn4, { showCursor: false, strings: [', Pro Athlete', ' '], disableBackTyping: true, startDelay: 0, backDelay:  2000, backSpeed:  75 });
     };
     let init3 = () => {
-      init(typeIn3, { showCursor: false, strings: ['Student, Software Developer, Entrepreneur'], disableBackTyping: true, startDelay: 1000, onFinished: init4 });
+      init(typeIn3, { showCursor: false, strings: ['Software Developer, Tech Enthusiast'], disableBackTyping: true, startDelay: 1000, onFinished: init4 });
     };
     let init2 = () => {
       init(typeIn2, { showCursor: false, strings: [', I\'m Keith'], disableBackTyping: true, startDelay: 2000, onFinished: init3 });
@@ -50,7 +51,7 @@ const IndexPage = () => {
             </h1>
             <div className="subtitle is-size-3">
               <span className="type-in-3"></span>
-              <div className="type-in-4 strikethrough"></div>
+              <div className="type-in-4"></div>
             </div>
           </div>
         </div>
