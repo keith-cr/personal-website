@@ -44,8 +44,8 @@ class BlogPostTemplate extends React.Component {
                     </figure>
                   </div>
                   <div className="media-content">
-                    <p className="title is-4">Keith C-R</p>
-                    <p className="subtitle is-6">Written by <strong>Keith C-R</strong>, an entrepreneur, software developer and student currently studying at RHIT.</p>
+                    <p className="title is-4">Keith Condray-Raderstorf</p>
+                    <p className="subtitle is-6">Written by <strong>Keith Condray-Raderstorf</strong>, a software builder and engineer currently living in Seattle, WA.</p>
                   </div>
                 </div>
               </div>

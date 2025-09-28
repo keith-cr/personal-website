@@ -7,8 +7,12 @@ import Footer from '../components/footer';
 import NavBar from '../components/navbar';
 import useDarkMode from '../hooks/useDarkMode';
 
+const fakeTitles = ['Pro Athlete', 'Award Winning Author', 'Captain America', 'NASA Astronaut', 'Professional Chef', 'Olympic Gold Medalist', 'World Famous DJ', 'Secret Agent', 'Time Traveler', 'Superhero in Training', 'Professional Gamer', 'Bestselling Novelist', 'Rock Star'];
+
 const IndexPage = () => {
   useEffect(() => {
+    const randomFakeTitle = fakeTitles[Math.floor(Math.random() * fakeTitles.length)];
+
     const typeIn1 = document.querySelector('.type-in-1');
     typeIn1.innerHTML = '';
     const typeIn2 = document.querySelector('.type-in-2');
@@ -19,10 +23,10 @@ const IndexPage = () => {
     typeIn4.innerHTML = '';
     let init4 = () => {
       typeIn4.classList.add('strikethrough');
-      init(typeIn4, { showCursor: false, strings: [', Pro Athlete', ' '], disableBackTyping: true, startDelay: 0, backDelay:  2000, backSpeed:  75 });
+      init(typeIn4, { showCursor: false, strings: [`, ${randomFakeTitle}`, ' '], disableBackTyping: true, startDelay: 0, backDelay:  2000, backSpeed:  75 });
     };
     let init3 = () => {
-      init(typeIn3, { showCursor: false, strings: ['Software Developer, Tech Enthusiast'], disableBackTyping: true, startDelay: 1000, onFinished: init4 });
+      init(typeIn3, { showCursor: false, strings: ['Software Builder and Engineer'], disableBackTyping: true, startDelay: 1000, onFinished: init4 });
     };
     let init2 = () => {
       init(typeIn2, { showCursor: false, strings: [', I\'m Keith'], disableBackTyping: true, startDelay: 2000, onFinished: init3 });

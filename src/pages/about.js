@@ -9,20 +9,20 @@ import SchoolIcon from '@material-ui/icons/School';
 import ImportantDevicesIcon from '@material-ui/icons/ImportantDevices';
 import WorkIcon from '@material-ui/icons/Work';
 
-const BlogPage = () => {
-  const workIconStyle = { background: '#357DED', color: '#fff'  };
-  const schoolIconStyle = { background: '#9A0913', color: '#fff' };
-  const projectIconStyle = { background: '#F3B700', color: '#fff' };
+const AboutPage = () => {
+  const workIconStyle = { background: '#3b82f6', color: '#fff' };
+  const schoolIconStyle = { background: '#dc2626', color: '#fff' };
+  const projectIconStyle = { background: '#eab308', color: '#fff' };
 
   return (
     <>
-      <SEO title="About" description="My name is Keith and I'm a software developer amd tech enthusiast." />
+      <SEO title="About" description="My name is Keith and I'm a software builder and engineer." />
       <NavBar active="about" />
       <div className=" section pb-0">
         <div className="container">
           <h1 className="title is-1">About Me</h1>
-          <p className="mb-2">My name is Keith and I&apos;m a software developer currently living in Seattle, WA.</p>
-          <p className="mb-2">I graduated from Rose-Hulman Institue of Technology with a degree in Computer Science, but I&apos;ve been working on real world software development projects since long before that. Throughout my education, I&apos;ve created several startups and worked on various side projects. 
+          <p className="mb-2">My name is Keith and I&apos;m a software engineer currently living in Seattle, WA.</p>
+          <p className="mb-2">I graduated from Rose-Hulman Institue of Technology with a degree in Computer Science, but I&apos;ve been working on real world software development projects since long before that. Throughout my education, I&apos;ve launched several products as side projects.
             See below for more information about my skills and previous experience.</p>
           <p className="mb-2">In my free time, I enjoy video games, music, various forms of video entertainment, and making memories with friends.</p>
           <h2 className="title is-2 mt-4 mb-4">My History</h2>
@@ -31,7 +31,7 @@ const BlogPage = () => {
       <div className="section timeline">
         <div className="container">
           <VerticalTimeline className="kcr-vertical-timeline">
-            <VerticalTimelineElement 
+            <VerticalTimelineElement
               intersectionObserverProps={{ triggerOnce: true }}
               className="vertical-timeline-element--work"
               date="July 2022 - Present"
@@ -46,7 +46,7 @@ const BlogPage = () => {
                 <span className="tag tag-java is-small">Java</span>
               </div>
             </VerticalTimelineElement>
-            <VerticalTimelineElement 
+            <VerticalTimelineElement
               intersectionObserverProps={{ triggerOnce: true }}
               className="vertical-timeline-element--work"
               date="June 2021 - August 2021"
@@ -61,7 +61,7 @@ const BlogPage = () => {
                 <span className="tag tag-java is-small">Java</span>
               </div>
             </VerticalTimelineElement>
-            <VerticalTimelineElement 
+            <VerticalTimelineElement
               intersectionObserverProps={{ triggerOnce: true }}
               className="vertical-timeline-element--work"
               date="June 2020 - August 2020"
@@ -91,7 +91,7 @@ const BlogPage = () => {
                 <span className="tag tag-python is-small">Python</span>
               </div>
               <p>
-                During the summer of 2019, I worked for the Legislative Services Agency of the Indiana State Government as a Software Developer Intern. I worked on various bug fixes and improvements to their many Django web applications used by the Indiana General Assembly representatives and staff. 
+                During the summer of 2019, I worked for the Legislative Services Agency of the Indiana State Government as a Software Developer Intern. I worked on various bug fixes and improvements to their many Django web applications used by the Indiana General Assembly representatives and staff.
               </p>
             </VerticalTimelineElement>
             <VerticalTimelineElement
@@ -112,7 +112,7 @@ const BlogPage = () => {
               icon={<ImportantDevicesIcon />}
             >
               <h3 className="vertical-timeline-element-title">WaitMate</h3>
-              <h4 className="vertical-timeline-element-subtitle">Founder</h4>
+              <h4 className="vertical-timeline-element-subtitle">Side Project</h4>
               <div className="tags">
                 <span className="tag tag-node is-small">Node.js</span>
                 <span className="tag tag-html is-small">HTML/CSS</span>
@@ -120,7 +120,7 @@ const BlogPage = () => {
                 <span className="tag is-small">Android</span>
               </div>
               <p>
-                As a product of KMD Digital, I also founded and run WaitMate. I programmed the backend, website frontend, and mobile app, all with various frameworks using Javascript. In addition, I did basic branding and marketing tasks to help form WaitMate&apos;s identity.
+                A full-stack restaurant wait time tracking platform featuring a Node.js backend API, responsive web interface, and cross-platform mobile applications for iOS and Android. Beyond development, I handled product design, branding, and user experience, gaining valuable experience in end-to-end product development.
               </p>
             </VerticalTimelineElement>
             <VerticalTimelineElement
@@ -141,12 +141,12 @@ const BlogPage = () => {
               icon={<ImportantDevicesIcon />}
             >
               <h3 className="vertical-timeline-element-title">Feedopoly</h3>
-              <h4 className="vertical-timeline-element-subtitle">Founder</h4>
+              <h4 className="vertical-timeline-element-subtitle">Side Project</h4>
               <div className="tags">
                 <span className="tag tag-wordpress is-small">WordPress</span>
               </div>
               <p>
-                As my second side project, Feedopoly was a WordPress multisite that allowed users to sign up and create their own websites. I researched and installed popular plug-ins and themes, in addition to configuring the sitewide plugins that enabled the multisite.
+                A multi-tenant WordPress platform that evolved from a social media aggregation concept into a comprehensive website creation service. Configured custom user registration and site provisioning features, managing the technical complexities of WordPress multisite setup.
               </p>
             </VerticalTimelineElement>
             <VerticalTimelineElement
@@ -157,12 +157,12 @@ const BlogPage = () => {
               icon={<ImportantDevicesIcon />}
             >
               <h3 className="vertical-timeline-element-title">Business Media</h3>
-              <h4 className="vertical-timeline-element-subtitle">Founder</h4>
+              <h4 className="vertical-timeline-element-subtitle">Side Project</h4>
               <div className="tags">
                 <span className="tag tag-html is-small">HTML/CSS</span>
               </div>
               <p>
-                Business Media was my first side project. The goal was for it to be a social media platform for businesses to interact with customers. After purchasing the source code for a social media website template, I modified the frontend to suit my needs.
+                My first entrepreneurial venture into social media platform development. Gained foundational experience in frontend development, user interface design, and software customization by adapting and enhancing the existing codebases to create a business-focused social networking platform.
               </p>
             </VerticalTimelineElement>
           </VerticalTimeline>
@@ -173,4 +173,4 @@ const BlogPage = () => {
   );
 };
 
-export default BlogPage;
+export default AboutPage;
